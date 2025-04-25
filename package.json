@@ -12,10 +12,43 @@
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "bookmark-files.helloWorld",
-      "title": "Hello World"
-    }]
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "bookmarkFiles",
+          "title": "Bookmarks",
+          "icon": "media/bookmark.svg"
+        }
+      ]
+    },
+    "views": {
+      "bookmarkFiles": [
+        {
+          "id": "bookmarkExplorer",
+          "name": "Bookmarks",
+          "title": "Bookmarked Files"
+        }
+      ]
+    },
+    "menus": {
+      "view/item/context": [
+        {
+          "command": "bookmark-files.removeBookmark",
+          "when": "view == bookmarkExplorer",
+          "group": "inline"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "bookmark-files.addBookmark",
+        "title": "Add to Bookmarks"
+      },
+      {
+        "command": "bookmark-files.removeBookmark",
+        "title": "Remove Bookmark"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
