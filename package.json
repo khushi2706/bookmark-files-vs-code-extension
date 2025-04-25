@@ -12,21 +12,23 @@
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
+    "views": {
+      "bookmarkFiles": [
+        {
+          "id": "bookmarkExplorer",
+          "name": "Bookmarks",
+          "title": "Bookmarked Files",
+          "type": "tree",
+          "icon": "media/bookmark.svg"
+        }
+      ]
+    },
     "viewsContainers": {
       "activitybar": [
         {
           "id": "bookmarkFiles",
           "title": "Bookmarks",
           "icon": "media/bookmark.svg"
-        }
-      ]
-    },
-    "views": {
-      "bookmarkFiles": [
-        {
-          "id": "bookmarkExplorer",
-          "name": "Bookmarks",
-          "title": "Bookmarked Files"
         }
       ]
     },
